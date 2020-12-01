@@ -57,9 +57,10 @@ Elimdeki veriye göre elbow metodunu kullanarak en uygun sayıda cluster sayıs�
 Bunlara ek olarak, bir yemek önerisi algoritması geliştirdim. Seçtiğiniz yemek için geliştirdiğim algoritmadan alınan skorlara göre en iyiden en kötüye sıralayarak bir restoran listesi veriyor. Bu algoritma yorumlarda geçen yemeklerin, yorum puanına ve sıklığına göre bir skor hesaplıyor ve en iyi skorları listeliyor. Algoritmanın nasıl hesaplandığı colab notebookunda mevcuttur.
 
 Yemek puanı şu şekilde hesaplanmaktadır:
+
 Yemek puanı = (yapılan yorumun ortalama puanı * 0.5) + ((yemeğin yorumlarda geçme sayısı * 0.5) / 6.9)
 
-Not: 6.9 değeri tüm restoranlardaki yemeklerin sıklığının ortalaması alınarak bulunmuştur. Normalize etmek için kullanıyorum.
+Not: 6.9 değeri tüm restoranlardaki yemeklerin sıklığının ortalaması alınarak bulunmuştur. Normalize etmek için kullanılıyor.
 
 Aşağıdaki grafikte neden 3 cluster seçtiğimi görebilirsiniz. Tam net olmasa da 3. noktadan sonra daha düz bir çizgiye yönelim var, bu nedenle 3 cluster olacağını düşündüm.
 
