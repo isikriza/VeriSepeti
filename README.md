@@ -1,0 +1,2 @@
+# VeriSepeti
+data mining project
