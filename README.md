@@ -60,3 +60,7 @@ Yemek puanı şu şekilde hesaplanmaktadır:
 Yemek puanı = (yapılan yorumun ortalama puanı * 0.5) + ((yemeğin yorumlarda geçme sayısı * 0.5) / 6.9)
 
 Not: 6.9 değeri tüm restoranlardaki yemeklerin sıklığının ortalaması alınarak bulunmuştur. Normalize etmek için kullanıyorum.
+
+Aşağıdaki grafikte neden 3 cluster seçtiğimi görebilirsiniz. Tam net olmasa da 3. noktadan sonra daha düz bir çizgiye yönelim var, bu nedenle 3 cluster olacağını düşündüm.
+
+![Screenshot](elbow.JPG)
