@@ -1,0 +1,83 @@
+{% extends "ne_yesem/base.html" %}
+{% block content %}
+    <div class="cover">
+        <form method="POST">
+            {% csrf_token %}
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+                {% endfor %}
+            {% endif %}
+            <h1>Restoranları keşfet.</h1>
+            <div>
+                <select name="il" id="sehirler"></select>
+                <select name="semt" id="ilceler">
+                    <option selected=\"true\" disabled>Semt Seçiniz</option>
+                </select>
+                <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+                <script>
+                    var s_data = JSON.parse("{{data_sehirler|escapejs}}");
+                    var i_data = JSON.parse("{{data_ilceler|escapejs}}");
+                    html_sehir = "'<option selected=\"true\" disabled>İl Seçiniz</option>'";
+                    for (var i = 0; i < s_data['sehirler'].length; i++) {
+                        var sehir_id = s_data['sehirler'][i]['sehir_ID'];
+                        var sehir_adi = s_data['sehirler'][i]['sehir_adi'].toUpperCase();
+                        html_sehir += "<option value=" + sehir_id + ">" + sehir_adi + "</option>"
+                    }
+                    document.getElementById("sehirler").innerHTML = html_sehir;
+                    html_semt = "<option selected=\"true\" disabled>Semt Seçiniz</option>";
+                    $("#sehirler").on("change", function(){
+                        let strSehir_ID = $(this).val();
+                        fnIlceler_Doldur(strSehir_ID);
+                    });
+                    fnIlceler_Doldur = (parSehir_ID) => {
+                        for (var i = 0; i < i_data['ilceler'].length; i++) {
+                            var strSehir_ID = i_data['ilceler'][i]['sehir_ID'];
+                            if (parSehir_ID === strSehir_ID) {
+                                var ilce_id = i_data['ilceler'][i]['ilce_ID'];
+                                var ilce_adi = i_data['ilceler'][i]['ilce_adi'].toUpperCase();
+                                html_semt += "<option value=" + ilce_id + ">" + ilce_adi + "</option>"
+                            }
+                        }
+                        document.getElementById("ilceler").innerHTML = html_semt;
+                        html_semt = "<option selected=\"true\" disabled>Semt Seçiniz</option>";
+                    }
+                </script>
+            </div>
+            <div  class="flex-form">
+                <div>
+                    <label for="appt">Saat Aralığını Seçin:</label>
+                    <input type="time" name="acilis_zamani" value="09:30:00">
+                    <input type="time" name="kapanis_zamani" value="23:30:00">
+                </div>
+                <div>
+                    <label> Minimum Tutar (TL): </label>
+                    <input type="number" name="minimum_tutar" min="0" max="50" value="0" step="5">
+                </div>
+                <div>
+                    <label> Minimum Puan: </label>
+                    <input type="number" name="minimum_puan" min="1" max="9" value="1">
+                </div>
+            </div>
+            <div  class="flex-form">
+                <div>
+                    <input type="date" name="yorum_date" id="today">
+                </div>
+                <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
+                <script>
+                    document.getElementById('today').value = moment().format('YYYY-MM-DD');
+                </script>
+                <div>
+                    <label>Hafta içi</label>
+                    <input type="checkbox" name="haftaici" checked>
+                </div>
+                <div>
+                    <label>Hafta sonu</label>
+                    <input type="checkbox" name="haftasonu">
+                </div>
+                <input type="submit" name="getir" value="Getir">
+                <input type="submit" name="kesfet" value="Keşfet">
+            </div>
+        </form>
+    </div>
+{% endblock content %}

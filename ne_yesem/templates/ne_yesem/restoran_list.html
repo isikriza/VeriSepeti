@@ -1,0 +1,70 @@
+{% extends "ne_yesem/base_res.html" %}
+{% block content %}
+    <div class="col-md-8">
+        {% for _, restaurant, semt in restaurants %}
+            <article class="media content-section">
+              <div class="media-body">
+                <div class="article-metadata">
+                  <a class="mr-2">Hız: {{ restaurant.hiz }} Lezzet: {{ restaurant.lezzet }} Servis: {{ restaurant.servis }}</a>
+                  <small class="text-muted"> Minimum tutar: {{ semt.minimum_tutar|floatformat:-2 }} TL</small>
+                </div>
+                  <h2><a class="article-title" href="{% url 'restaurants_detail' restaurant.id %}">{{ restaurant.name }}</a></h2>
+                  {% if restaurant.acilis_zamani|date:"H:i" == "00:00" %}
+                      {% if restaurant.kapanis_zamani|date:"H:i" == "23:59" %}
+                          <p class="article-content"> Çalışma saatleri: 24 Saat </p>
+                      {% endif %}
+                  {% else %}
+                      <p class="article-content"> Çalışma saatleri: {{ restaurant.acilis_zamani|date:"H:i" }} - {{ restaurant.kapanis_zamani|date:"H:i" }}</p>
+                  {% endif %}
+                  {% if restaurant.haftasonu %}
+                      <p class="article-content"> Hatfa içi ve hafta sonu açık.</p>
+                  {% else %}
+                      <p class="article-content"> Sadece hafta içi açık.</p>
+                  {% endif %}
+                <small class="text-muted"> il/semt: {{ restaurant.il }}/{{ semt.semt_mahalle_adi }}</small>
+              </div>
+            </article>
+        {% endfor %}
+    </div>
+{% endblock content %}
+{% block content1 %}
+    <div class="col-md-4">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="content-section">
+            <h3>Yemek Seçiniz</h3>
+              <ul class="list-group">
+                  <select name="yemek" id="yemek">
+                      <option>Burger</option>
+                      <option>Pizza</option>
+                      <option>Döner</option>
+                      <option>Dürüm</option>
+                      <option>Pide</option>
+                      <option>Kebap</option>
+                      <option>Lahmacun</option>
+                      <option>Kokoreç</option>
+                      <option>Çorba</option>
+                      <option>Çiğ Köfte & Köfte</option>
+                      <option>Tantuni</option>
+                      <option>Midye</option>
+                      <option>Balık</option>
+                      <option>Sushi</option>
+                      <option>Noodle</option>
+                      <option>Tatlı</option>
+                      <option>Pasta & Börek</option>
+                      <option>Sandviç & Tost</option>
+                      <option>Kumpir</option>
+                      <option>Waffle</option>
+                  </select>
+                  <input type="submit" name="ara" value="Ara">
+              </ul>
+        </div>
+        <div class="content-section">
+            <h3>Cluster Sonuçları</h3>
+              <ul class="list-group">
+                  <input type="submit" name="cluster" value="Getir">
+              </ul>
+        </div>
+    </form>
+    </div>
+{% endblock %}

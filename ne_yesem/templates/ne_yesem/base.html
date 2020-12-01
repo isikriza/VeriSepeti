@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Veri Sepeti</title>
+</head>
+<body>
+    <link rel="stylesheet" type="text/css" href="{% static 'ne_yesem/main.css' %}">
+    <div class="container">
+      <header>
+        <h2><a href="{% url 'ne_yesem-home' %}"><i class="ion-plane"></i> Veri Sepeti </a></h2>
+        <nav>
+          <ul>
+            <li>
+              <a class="btn" href="{% url 'ne_yesem-home' %}" title="Home">Home</a>
+            </li>
+            <li>
+              <a class="btn" href="{% url 'ne_yesem-about' %}" title="About">About</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

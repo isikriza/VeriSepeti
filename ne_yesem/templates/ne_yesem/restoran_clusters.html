@@ -1,0 +1,91 @@
+{% extends "ne_yesem/base_res.html" %}
+{% block content %}
+    <div class="col-md-4">
+        {% for _, label, restaurant, semt in restaurants %}
+            {% if label == 0 %}
+                <article class="media content-section">
+                  <div class="media-body">
+                    <div class="article-metadata">
+                      <a class="mr-2">Hız: {{ restaurant.hiz }} Lezzet: {{ restaurant.lezzet }} Servis: {{ restaurant.servis }}</a>
+                    </div>
+                      <h2><a class="article-title" href="{% url 'restaurants_detail' restaurant.id %}">{{ restaurant.name }}</a></h2>
+                      {% if restaurant.acilis_zamani|date:"H:i" == "00:00" %}
+                        {% if restaurant.kapanis_zamani|date:"H:i" == "23:59" %}
+                            <p class="article-content"> Çalışma saatleri: 24 Saat </p>
+                        {% endif %}
+                      {% else %}
+                        <p class="article-content"> Çalışma saatleri: {{ restaurant.acilis_zamani|date:"H:i" }} - {{ restaurant.kapanis_zamani|date:"H:i" }}</p>
+                      {% endif %}
+                      {% if restaurant.haftasonu %}
+                          <p class="article-content"> Hatfa içi ve hafta sonu açık.</p>
+                      {% else %}
+                          <p class="article-content"> Sadece hafta içi açık.</p>
+                      {% endif %}
+                    <small class="text-muted"> il/semt: {{ restaurant.il }}/{{ semt.semt_mahalle_adi }}</small><br>
+                    <small class="text-muted"> Cluster Label: {{ label }}</small>
+                  </div>
+                </article>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock content %}
+{% block content1 %}
+    <div class="col-md-4">
+        {% for _, label, restaurant, semt in restaurants %}
+            {% if label == 1 %}
+                <article class="media content-section">
+                  <div class="media-body">
+                    <div class="article-metadata">
+                      <a class="mr-2">Hız: {{ restaurant.hiz }} Lezzet: {{ restaurant.lezzet }} Servis: {{ restaurant.servis }}</a>
+                    </div>
+                      <h2><a class="article-title" href="{% url 'restaurants_detail' restaurant.id %}">{{ restaurant.name }}</a></h2>
+                      {% if restaurant.acilis_zamani|date:"H:i" == "00:00" %}
+                        {% if restaurant.kapanis_zamani|date:"H:i" == "23:59" %}
+                            <p class="article-content"> Çalışma saatleri: 24 Saat </p>
+                        {% endif %}
+                      {% else %}
+                        <p class="article-content"> Çalışma saatleri: {{ restaurant.acilis_zamani|date:"H:i" }} - {{ restaurant.kapanis_zamani|date:"H:i" }}</p>
+                      {% endif %}
+                      {% if restaurant.haftasonu %}
+                          <p class="article-content"> Hatfa içi ve hafta sonu açık.</p>
+                      {% else %}
+                          <p class="article-content"> Sadece hafta içi açık.</p>
+                      {% endif %}
+                    <small class="text-muted"> il/semt: {{ restaurant.il }}/{{ semt.semt_mahalle_adi }}</small><br>
+                    <small class="text-muted"> Cluster Label: {{ label }}</small>
+                  </div>
+                </article>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock content1 %}
+{% block content2 %}
+    <div class="col-md-4">
+        {% for _, label, restaurant, semt in restaurants %}
+            {% if label == 2 %}
+                <article class="media content-section">
+                  <div class="media-body">
+                    <div class="article-metadata">
+                      <a class="mr-2">Hız: {{ restaurant.hiz }} Lezzet: {{ restaurant.lezzet }} Servis: {{ restaurant.servis }}</a>
+                    </div>
+                      <h2><a class="article-title" href="{% url 'restaurants_detail' restaurant.id %}">{{ restaurant.name }}</a></h2>
+                      {% if restaurant.acilis_zamani|date:"H:i" == "00:00" %}
+                        {% if restaurant.kapanis_zamani|date:"H:i" == "23:59" %}
+                            <p class="article-content"> Çalışma saatleri: 24 Saat </p>
+                        {% endif %}
+                      {% else %}
+                        <p class="article-content"> Çalışma saatleri: {{ restaurant.acilis_zamani|date:"H:i" }} - {{ restaurant.kapanis_zamani|date:"H:i" }}</p>
+                      {% endif %}
+                      {% if restaurant.haftasonu %}
+                          <p class="article-content"> Hatfa içi ve hafta sonu açık.</p>
+                      {% else %}
+                          <p class="article-content"> Sadece hafta içi açık.</p>
+                      {% endif %}
+                    <small class="text-muted"> il/semt: {{ restaurant.il }}/{{ semt.semt_mahalle_adi }}</small><br>
+                    <small class="text-muted"> Cluster Label: {{ label }}</small>
+                  </div>
+                </article>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock content2 %}

@@ -1,0 +1,24 @@
+{% extends "ne_yesem/base_res.html" %}
+{% block content %}
+    <div class="col-md-10">
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2">Hız: {{ restaurant.hiz }} Lezzet: {{ restaurant.lezzet }} Servis: {{ restaurant.servis }}</a>
+            </div>
+                <h2><a class="article-title" href="{% url 'restaurants_detail' restaurant.id %}">{{ restaurant.name }}</a></h2>
+          </div>
+        </article>
+        {% for yorum in yorums %}
+            <article class="media content-section">
+                <div class="media-body">
+                <div class="article-metadata">
+                    <a class="mr-2">Hız: {{ yorum.yorum_hiz }} Lezzet: {{ yorum.yorum_lezzet }} Servis: {{ yorum.yorum_servis }}</a>
+                </div>
+                    <p class="article-content"> {{ yorum.yorum_icerik }} </p>
+                </div>
+                <small class="text-muted"> {{ yorum.yorum_date|date:"d F Y" }} </small>
+            </article>
+        {% endfor %}
+    </div>
+{% endblock content %}
