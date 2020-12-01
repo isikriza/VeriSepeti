@@ -18,6 +18,37 @@ python manage.py runserver
 
 Web uygulamasını kullanmak için tarayıcıdan http://127.0.0.1:8000/ adresine gitmelisiniz.
 
+Uygulamanın ana sayfası aşağıdaki gibidir. Kullanıcıya iki farklı seçenek sunulmuştur. (Getir/Keşfet)
+
+Getir'e basıldığında girilen parametrelere göre veriler çekilerek veri tabanına ekleme yapılır. (Bu işlem çok uzun sürebileceği için iki farklı seçenek ekledim.) Bu işlem bittiğinde bir popup mesajı çıkarak işlemin bittiğini söyler. Aynı zamanda terminal ekranından işlemin çıktılarını da görebilirsiniz.
+
+Keşfet'e basıldığında ise, mevcut veriler üzerinde filtreleme yapılarak restoranlar listelenir.
+
+![Screenshot](home_page.JPG)
+
+
+Restoranların listelendiği sayfa aşağıdaki gibidir. Sağ üstten yemek seçerek önerilen restoranların bulunduğu sayfaya gidebilirsiniz veya cluster tuşuna tılayarak öbeklenen restoranların bulunduğu sayfaya gidebilirsiniz. Restoranların isimlerinin üstüne tıklayarak, o restoranın detaylı bilgilerinin bulunduğu sayfaya ulaşabilirsiniz.
+
+![Screenshot](res_list_page.JPG)
+
+
+Restoran detaylarının bulunduğu sayfadan yorumlara erişebilirsiniz.
+
+Restoran bilgilerinin sayfası:
+
+![Screenshot](res_detail_page.JPG)
+
+
+Restoran yorumlarının bulunduğu sayfa:
+
+![Screenshot](comments_page.JPG)
+
+
+K-means kullanılarak bölünen restoranların sayfası aşağıdaki gibidir. Bu sayfada görsel olarak restoranların karşılaştırmasını yapabilirsiniz.
+
+![Screenshot](cluster_page.JPG)
+
+
 Yukarıda paylaştığım drive klasöründe ayrıca bir de colab notebook var. Bu notebookta şu ana kadar çektiğim tüm verileri kullanarak bir takım işlemler gerçekleştirdim.
 Herbir restoranın yorum sayısı, yorum puanları, yemek sayısı ve fiyatları, günlük yorum sıklığına göre restoranlar için bir clustering uyguladım.
 Elimdeki veriye göre elbow metodunu kullanarak en uygun sayıda cluster sayısını (3) çıkarttım ve buna göre k-means algoritmasını çalıştırdım. Colab notebookunda bunu nasıl yaptığımı görebilirsiniz.
