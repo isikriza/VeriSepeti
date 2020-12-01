@@ -18,6 +18,8 @@ python manage.py runserver
 
 Web uygulamasını kullanmak için tarayıcıdan http://127.0.0.1:8000/ adresine gitmelisiniz.
 
+**NOT: Kullanıcı arayüzü farklı tarayıcılar için farklı sonuçlar verebiliyor. Ben google chrome kullanarak çalıştım genelde ve bir sıkıntı ile karşılaşmadım. Bu nedenle google chrome kullanılmasını tavsiye ederim.**
+
 Uygulamanın ana sayfası aşağıdaki gibidir. Kullanıcıya iki farklı seçenek sunulmuştur. (Getir/Keşfet)
 
 Getir'e basıldığında girilen parametrelere göre veriler çekilerek veri tabanına ekleme yapılır. (Bu işlem çok uzun sürebileceği için iki farklı seçenek ekledim.) Bu işlem bittiğinde bir popup mesajı çıkarak işlemin bittiğini söyler. Aynı zamanda terminal ekranından işlemin çıktılarını da görebilirsiniz.
