@@ -1,4 +1,4 @@
-# VeriSepeti
+# Veri Sepeti
 
 Gerekli paketleri yüklemek için:
 
@@ -22,7 +22,7 @@ Web uygulamasını kullanmak için tarayıcıdan http://127.0.0.1:8000/ adresine
 
 Uygulamanın ana sayfası aşağıdaki gibidir. Kullanıcıya iki farklı seçenek sunulmuştur. (Getir/Keşfet)
 
-Getir'e basıldığında girilen parametrelere göre veriler çekilerek veri tabanına ekleme yapılır. (Bu işlem çok uzun sürebileceği için iki farklı seçenek ekledim.) Bu işlem bittiğinde bir popup mesajı çıkarak işlemin bittiğini söyler. Aynı zamanda terminal ekranından işlemin çıktılarını da görebilirsiniz.
+Getir'e basıldığında girilen parametrelere göre veriler çekilerek veri tabanına ekleme yapılır. (Bu işlem çok uzun sürebileceği için iki farklı işlem olarak ayarladim.) Bu işlem bittiğinde bir popup mesajı çıkarak işlemin bittiğini söyler. Aynı zamanda terminal ekranından işlemin çıktılarını da görebilirsiniz.
 
 Keşfet'e basıldığında ise, mevcut veriler üzerinde filtreleme yapılarak restoranlar listelenir.
 
