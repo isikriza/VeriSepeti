@@ -16,7 +16,13 @@ Daha sonra manage.py scriptini şu şekilde çalıştırarak localde django proj
 python manage.py runserver
 ```
 
-Web uygulamasını kullanmak için tarayıcıdan http://127.0.0.1:8000/ adresine gitmelisiniz.
+Web uygulamasını kullanmak için tarayıcıdan http://127.0.0.1:8000/ adresine gitmelisiniz. Ayrıca Django'nun bize sağladığı yönetici sayfasını kullanarak veri tabanındaki verileri incelemek ve değişiklik yapmak için yararlanabilirsiniz.
+
+Bunun için http://127.0.0.1:8000/admin sayfasına gitmeniz gerekiyor. Sizden kullanıcı adı ve şifre isteyecektir.
+```
+Kullanıcı adı: admin
+Şifre: 1234
+```
 
 **NOT: Kullanıcı arayüzü farklı tarayıcılar için farklı sonuçlar verebiliyor. Ben google chrome kullanarak çalıştım genelde ve bir sıkıntı ile karşılaşmadım. Bu nedenle google chrome kullanılmasını tavsiye ederim.**
 
