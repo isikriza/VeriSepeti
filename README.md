@@ -26,29 +26,29 @@ Getir'e basıldığında girilen parametrelere göre veriler çekilerek veri tab
 
 Keşfet'e basıldığında ise, mevcut veriler üzerinde filtreleme yapılarak restoranlar listelenir.
 
-![Screenshot](home_page.JPG)
+![Screenshot](ss/home_page.JPG)
 
 
 Restoranların listelendiği sayfa aşağıdaki gibidir. Sağ üstten yemek seçerek önerilen restoranların bulunduğu sayfaya gidebilirsiniz veya cluster tuşuna tılayarak öbeklenen restoranların bulunduğu sayfaya gidebilirsiniz. Restoranların isimlerinin üstüne tıklayarak, o restoranın detaylı bilgilerinin bulunduğu sayfaya ulaşabilirsiniz.
 
-![Screenshot](res_list_page.JPG)
+![Screenshot](ss/res_list_page.JPG)
 
 
 Restoran detaylarının bulunduğu sayfadan yorumlara erişebilirsiniz.
 
 Restoran bilgilerinin sayfası:
 
-![Screenshot](res_detail_page.JPG)
+![Screenshot](ss/res_detail_page.JPG)
 
 
 Restoran yorumlarının bulunduğu sayfa:
 
-![Screenshot](comments_page.JPG)
+![Screenshot](ss/comments_page.JPG)
 
 
 K-means kullanılarak bölünen restoranların sayfası aşağıdaki gibidir. Bu sayfada görsel olarak restoranların karşılaştırmasını yapabilirsiniz.
 
-![Screenshot](cluster_page.JPG)
+![Screenshot](ss/cluster_page.JPG)
 
 
 Yukarıda paylaştığım drive klasöründe ayrıca bir de colab notebook var. Bu notebookta şu ana kadar çektiğim tüm verileri kullanarak bir takım işlemler gerçekleştirdim.
@@ -64,4 +64,4 @@ Not: 6.9 değeri tüm restoranlardaki yemeklerin sıklığının ortalaması al�
 
 Aşağıdaki grafikte neden 3 cluster seçtiğimi görebilirsiniz. Tam net olmasa da 3. noktadan sonra daha düz bir çizgiye yönelim var, bu nedenle 3 cluster olacağını düşündüm.
 
-![Screenshot](elbow.JPG)
+![Screenshot](ss/elbow.JPG)
